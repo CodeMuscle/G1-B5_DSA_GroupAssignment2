@@ -20,11 +20,11 @@ class Main
 		void processBST(Node root)
 		{
 			if(root == null)return;
-			//loop till left leaf
+
 			processBST(root.left);
 			Node rightNode = root.right;
 			Node leftNode = root.left;
-			//update new head to hold new root
+
 			if(newHead == null)
 			{
 				newHead = root;
@@ -33,7 +33,7 @@ class Main
 			}
 			else
 			{
-				//update the right of predecessor and also the predecessor to accommodate next node
+
 				prev.right = root;
 				root.left = null;
 				prev = root;
@@ -57,9 +57,7 @@ class Main
 			tree.node.right = new Node(60);
 			tree.node.left.left = new Node(10);
 			tree.node.right.left= new Node(55);
-			//utility method to transform bst to skewed tree
 			tree.processBST(tree.node);
-			//utility method to print the transformed data
 			tree.traverse(tree.newHead);
 		}
 	}
